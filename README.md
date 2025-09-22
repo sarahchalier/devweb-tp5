@@ -59,9 +59,12 @@ async function requestListener(_request, response) {
 }
 ```
 ## Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
+```js
   },
   "dependencies": {
     "cross-env": "^10.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
+}
+```

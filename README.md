@@ -30,6 +30,7 @@ Il n’y a pas de réponse par le client car le code appel un fichier index.html
 
 ## Question 1.4 quelle est l’erreur affichée dans la console ?
 L’erreur affichée dans la console est :
+```txt
 Error: ENOENT: no such file or directory, open 'C:\UNC\l2\s4\dev_web\devweb-tp5\index.html'
     at async open (node:internal/fs/promises:642:25)
     at async Object.readFile (node:internal/fs/promises:1279:14) {
@@ -38,9 +39,10 @@ Error: ENOENT: no such file or directory, open 'C:\UNC\l2\s4\dev_web\devweb-tp5\
   syscall: 'open',
   path: 'C:\\UNC\\l2\\s4\\dev_web\\devweb-tp5\\index.html'
 }
-
+```
 ## Question 1.5 donner le code de requestListener() modifié avec gestion d’erreur en async/await.
 Code modifié:
+```js
 import fs from "node:fs/promises";
 
 async function requestListener(_request, response) {
@@ -55,3 +57,23 @@ async function requestListener(_request, response) {
     response.end("Erreur 500 : Impossible de charger la page demandee.");
   }
 }
+```
+## Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
+```js
+  },
+  "dependencies": {
+    "cross-env": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+}
+```
+
+## Question 1.7 quelles sont les différences entre les scripts http-dev et http-prod ?
+Les différences entre http-dev et http-prod sont  :
+
+http-dev démarre le serveur en mode développement avec nodemon, il se relance tout seul quand je change le code et affiche plus de messages pour expliquer ce qu'il se passe.
+
+http-prod démarre le serveur en mode production avec Node.js, il ne se relance pas tout seul et il n’affiche pas les messages de debug.
+
+## Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.

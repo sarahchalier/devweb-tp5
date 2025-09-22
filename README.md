@@ -42,6 +42,7 @@ Error: ENOENT: no such file or directory, open 'C:\UNC\l2\s4\dev_web\devweb-tp5\
 ```
 ## Question 1.5 donner le code de requestListener() modifié avec gestion d’erreur en async/await.
 Code modifié:
+```js
 import fs from "node:fs/promises";
 
 async function requestListener(_request, response) {
@@ -56,7 +57,7 @@ async function requestListener(_request, response) {
     response.end("Erreur 500 : Impossible de charger la page demandee.");
   }
 }
-
+```
 ## Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
   },
   "dependencies": {

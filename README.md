@@ -68,3 +68,12 @@ async function requestListener(_request, response) {
     "nodemon": "^3.1.10"
 }
 ```
+
+## Question 1.7 quelles sont les différences entre les scripts http-dev et http-prod ?
+Les différences entre http-dev et http-prod sont  :
+
+http-dev démarre le serveur en mode développement avec nodemon, il se relance tout seul quand je change le code et affiche plus de messages pour expliquer ce qu'il se passe.
+
+http-prod démarre le serveur en mode production avec Node.js, il ne se relance pas tout seul et il n’affiche pas les messages de debug.
+
+## Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.

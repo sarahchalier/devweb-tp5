@@ -77,3 +77,7 @@ http-dev démarre le serveur en mode développement avec nodemon, il se relance 
 http-prod démarre le serveur en mode production avec Node.js, il ne se relance pas tout seul et il n’affiche pas les messages de debug.
 
 ## Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.
+http://localhost:8000/:  404: NOT FOUND
+http://localhost:8000/index.html : Bienvenue sur ma page node.js
+http://localhost:8000/random.html : 73
+http://localhost:8000/dont-exist: 404: NOT FOUND

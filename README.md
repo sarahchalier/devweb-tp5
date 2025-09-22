@@ -81,3 +81,11 @@ http://localhost:8000/:  404: NOT FOUND
 http://localhost:8000/index.html : Bienvenue sur ma page node.js
 http://localhost:8000/random.html : 73
 http://localhost:8000/dont-exist: 404: NOT FOUND
+
+# Partie 2
+
+## Question 2.1 donner les URL des documentations de chacun des modules installés par la commande précédente.
+express : https://expressjs.com/
+http-errors : https://github.com/jshttp/http-errors
+loglevel : https://github.com/pimterry/loglevel
+morgan : https://github.com/expressjs/morgan

@@ -4,20 +4,20 @@ const host = "localhost";
 const port = 8000;
 
 /** Question 1**/
-function requestListener(_request, response) {
+/**function requestListener(_request, response) {
   response.writeHead(200);
   response.end("<html><h1>My first server!<h1></html>");
-}
+}**/
 
 /**Question 2**/
-function requestListener(_request, response) {
+/**function requestListener(_request, response) {
   response.setHeader("Content-Type", "application/json");
   response.end(JSON.stringify({ message: "I'm OK" }));
-}
+}**/
 
 /**Question 3 et 4**/
 
-import fs from "node:fs/promises";
+/**import fs from "node:fs/promises";
 
 function requestListener(_request, response) {
   fs.readFile("index.html", "utf8")
@@ -27,7 +27,7 @@ function requestListener(_request, response) {
       return response.end(contents);
     })
     .catch((error) => console.error(error));
-}
+}**/
 
 /**Question 5**/
 import fs from "node:fs/promises";
@@ -45,6 +45,7 @@ async function requestListener(_request, response) {
   }
 }
 
+console.log("NODE_ENV =", process.env.NODE_ENV);
 
 const server = http.createServer(requestListener);
 server.listen(port, host, () => {

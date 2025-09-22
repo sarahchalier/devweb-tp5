@@ -7,6 +7,26 @@
   "type": "commonjs",
   "main": "server-http.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "http-dev": "cross-env NODE_ENV=development nodemon server-http.mjs",
+    "http-prod": "cross-env NODE_ENV=production node server-http.mjs"
+  },
+  "dependencies": {
+    "cross-env": "^10.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.0.1",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-unicorn": "^61.0.2",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
   }
 }

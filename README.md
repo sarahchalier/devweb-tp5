@@ -89,3 +89,15 @@ express : https://expressjs.com/
 http-errors : https://github.com/jshttp/http-errors
 loglevel : https://github.com/pimterry/loglevel
 morgan : https://github.com/expressjs/morgan
+
+## Question 2.2 vérifier que les trois routes fonctionnent.
+
+## Question 2.3 lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
+
+## Question 2.4 quand l’événement listening est-il déclenché ?
+
+## Question 2.5 indiquer quelle est l’option (activée par défaut) qui redirige / vers /index.html ?
+
+## Question 2.6 visiter la page d’accueil puis rafraichir (Ctrl+R) et ensuite forcer le rafraichissement (Ctrl+Shift+R). Quels sont les codes HTTP sur le fichier style.css ? 
+
+## Question 2.7 vérifier que l’affichage change bien entre le mode production et le mode development.

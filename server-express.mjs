@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import createError from "http-errors";
+import logger from "loglevel";
 
 const host = "localhost";
 const port = 8000;
@@ -13,7 +14,7 @@ app.use(express.static("static"));
 
 app.set("view engine", "ejs");
 
-app.get(["/", "/index.html"], async function (request, response, next) {
+app.get(["/", "/index.html"], async function (request, response) {
   response.sendFile("index.html", { root: "./" });
 });
 
@@ -27,12 +28,25 @@ app.get("/random/:nb", (request, response, next) => {
   response.render("random", { numbers, welcome });
 });
 
+app.use((request, response, next) => {
+  logger.debug(`default route handler : ${request.url}`);
+  return next(createError(404));
+});
+
+app.use((error, _request, response, _next) => {
+  logger.debug(`default error handler: ${error}`);
+  const status = error.status ?? 500;
+  const stack = app.get("env") === "development" ? error.stack : "";
+  const result = { code: status, message: error.message, stack };
+  return response.render("error", result);
+});
+
 const server = app.listen(port, host);
 
 server.on("listening", () =>
-  console.info(
+  logger.info(
     `HTTP listening on http://${server.address().address}:${server.address().port} with mode '${process.env.NODE_ENV}'`,
   ),
 );
 
-console.info(`File ${import.meta.url} executed.`);
+logger.setLevel(logger.levels.DEBUG);

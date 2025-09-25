@@ -1,0 +1,9 @@
+<body>
+  <div class="center">
+    <h1>Error <%= code %></h1>
+    <p><%= message %></p>
+  </div>
+  <% if (stack != null) { %>
+  <pre><%= stack %></pre>
+  <% } %>
+</body>

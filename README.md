@@ -146,6 +146,7 @@ Connection: keep-alive
 Keep-Alive: timeout=5
 
 ## Question 2.4 quand l’événement listening est-il déclenché ?
+L'évenement listening sera déclenché quand le serveur aura accédé avec susccés au port et à l'hote.
 
 ## Question 2.5 indiquer quelle est l’option (activée par défaut) qui redirige / vers /index.html ?
 

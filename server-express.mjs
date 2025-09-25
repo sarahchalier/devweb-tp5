@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import createError from "http-errors";
 
 const host = "localhost";
 const port = 8000;
@@ -10,16 +11,20 @@ if (app.get("env") === "development") app.use(morgan("dev"));
 
 app.use(express.static("static"));
 
+app.set("view engine", "ejs");
+
 app.get(["/", "/index.html"], async function (request, response, next) {
   response.sendFile("index.html", { root: "./" });
 });
 
-app.get("/random/:nb", async function (request, response, next) {
-  const length = request.params.nb;
-  const contents = Array.from({ length })
-    .map((_) => `<li>${Math.floor(100 * Math.random())}</li>`)
-    .join("\n");
-  return response.send(`<html><ul>${contents}</ul></html>`);
+app.get("/random/:nb", (request, response, next) => {
+  const length = Number.parseInt(request.params.nb, 10);
+  if (Number.isNaN(length)) {
+    return next(createError(400, "Le paramètre doit être un nombre"));
+  }
+  const numbers = Array.from({ length }).map(() => Math.floor(Math.random() * 100));
+  const welcome = "Liste de nombres aléatoires";
+  response.render("random", { numbers, welcome });
 });
 
 const server = app.listen(port, host);

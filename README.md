@@ -97,6 +97,53 @@ morgan : https://github.com/expressjs/morgan
 :8000/random/5:<img width="768" height="204" alt="image" src="https://github.com/user-attachments/assets/6e7dfb17-769b-4f95-8af5-5c30fdf54e7c" />
  
 ## Question 2.3 lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
+### :8000/
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Security-Policy: default-src 'none'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 157
+Date: Thu, 25 Sep 2025 02:49:27 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+### :8000/index.html
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Security-Policy: default-src 'none'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 157
+Date: Thu, 25 Sep 2025 02:50:49 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+### :8000/random/5
+
+1 requests
+309 B transferred
+81 B resources
+Finish: 3 ms
+DOMContentLoaded: 15 ms
+Request URL
+http://localhost:8000/random/5
+Request Method
+GET
+Status Code
+200 OK
+Remote Address
+[::1]:8000
+Referrer Policy
+strict-origin-when-cross-origin
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 81
+ETag: W/"51-ElI3D1Co7TLllnw/OZD1KEXetIY"
+Date: Thu, 25 Sep 2025 02:51:51 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
 
 ## Question 2.4 quand l’événement listening est-il déclenché ?
 

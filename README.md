@@ -91,7 +91,11 @@ loglevel : https://github.com/pimterry/loglevel
 morgan : https://github.com/expressjs/morgan
 
 ## Question 2.2 vérifier que les trois routes fonctionnent.
+:8000/ : <img width="909" height="206" alt="image" src="https://github.com/user-attachments/assets/ac561a2d-4c56-4a0b-a9ad-b91722275aac" />
+:8000/index.html: <img width="878" height="249" alt="image" src="https://github.com/user-attachments/assets/8f29f9a0-4e46-4d73-b2d6-69af61570aea" />
 
+:8000/random/5:<img width="768" height="204" alt="image" src="https://github.com/user-attachments/assets/6e7dfb17-769b-4f95-8af5-5c30fdf54e7c" />
+ 
 ## Question 2.3 lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
 
 ## Question 2.4 quand l’événement listening est-il déclenché ?

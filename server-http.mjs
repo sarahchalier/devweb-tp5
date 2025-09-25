@@ -82,13 +82,13 @@ async function requestListener(request, response) {
         return response.end(contents);
       }
       case "random": {
-        const nb = parseInt(urlParts[2]);
-        if (isNaN(nb) || nb <= 0) {
+        const nb = Number.parseInt(urlParts[2]);
+        if (Number.isNaN(nb) || nb <= 0) {
           response.writeHead(400);
           return response.end(`<html><p>Nombre invalide !</p></html>`);
         }
         const numbers = [];
-        for (let i = 0; i < nb; i++) {
+        for (let index = 0; index < nb; index++) {
           numbers.push(Math.floor(Math.random() * 101));
         }
         let template;
@@ -101,9 +101,10 @@ async function requestListener(request, response) {
         response.writeHead(200);
         return response.end(content);
       }
-      default:
+      default: {
         response.writeHead(404);
         return response.end(`<html><p>404: NOT FOUND</p></html>`);
+      }
     }
   } catch (error) {
     console.error(error);
